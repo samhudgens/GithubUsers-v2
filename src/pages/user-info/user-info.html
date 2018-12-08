@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      {{user.login}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+        <img [src]="user.avatar_url" width="100" item-left/>
+        <ion-card item-right>
+  
+          <ion-card-header>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-card-title>
+              {{ user.name }}
+            </ion-card-title>
+            <p>{{ user.bio }}</p>
+            <p>{{ user.company }}</p>
+            <p>{{ user.location }}</p>
+            <a>{{ user.blog }}</a>
+          </ion-card-content>
+        </ion-card>
+</ion-content>
