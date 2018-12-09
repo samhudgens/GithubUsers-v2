@@ -9,8 +9,8 @@
   <ion-list>
     <ion-item *ngFor="let user of users">
       <img [src]="user.avatar_url" height="30" width="30" item-left />
-      <p *ngIf="user.public_repos >= 9" style="color: red" (click)=viewUser(user)>{{user.login}}</p>
-      <p *ngIf="user.public_repos < 9" (click)=viewUser(user)>{{user.login}}</p>
+      <p *ngIf="user.public_repos >= 2" style="color: red" (click)=viewUser(user)>{{user.login}}</p>
+      <p *ngIf="user.public_repos < 2" (click)=viewUser(user)>{{user.login}}</p>
     </ion-item>
   </ion-list>
 

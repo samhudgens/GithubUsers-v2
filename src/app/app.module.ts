@@ -4,6 +4,14 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { MyApp } from './app.component';
 
+// redux pattern stuff
+import { CommonModule } from '@angular/common';
+import { Routes, Router, RouterModule} from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from '../store/reducers/user.reducer';
+
+
 import { AboutPage } from '../pages/about/about';
 import { SearchPage } from '../pages/search/search';
 import { FeedPage } from '../pages/feed/feed';
@@ -11,7 +19,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { UserService } from './services/user.service';
+import { UserService } from '../services/user.service';
 import { UserInfoPage } from '../pages/user-info/user-info';
 
 
@@ -27,7 +35,10 @@ import { UserInfoPage } from '../pages/user-info/user-info';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    //RouterModule.forRoot(ROUTES),
+    StoreModule.forRoot({ reducer })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
